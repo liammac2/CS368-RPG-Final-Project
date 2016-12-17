@@ -15,7 +15,7 @@ private:
 public:
     TextureManager();
     ~TextureManager();
-    void addTexture(sf::Texture& texture);
+    void addTexture(sf::Texture texture);
     sf::Texture& getTexture(int index);
 };
 #endif //CS368FINALPROJECT_RPG_IMAGEMANAGER_HPP

@@ -15,5 +15,6 @@ public:
     Tile(sf::Texture& texture);
     ~Tile();
     void draw(int x, int y, sf::RenderWindow *rw);
+    void setSpriteScale(float x, float y);
 };
 #endif //CS368FINALPROJECT_RPG_TILE_HPP
