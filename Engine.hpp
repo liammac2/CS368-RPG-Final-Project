@@ -8,6 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "TextureManager.hpp"
 #include "Tile.hpp"
+#include "Player.hpp"
 
 class Engine {
 private:
@@ -19,7 +20,12 @@ private:
     void processInput();
     void update();
     void loadTextures();
-    Tile* tile;
+    std::vector<std::vector<Tile*>> tiles;
+    Player* player;
+    int tilesize = 40;
+    bool battleProcessing = false;
+    void processBattle(Player &player);
+
 
 public:
     Engine();

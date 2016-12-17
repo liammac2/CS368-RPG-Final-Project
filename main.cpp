@@ -4,7 +4,6 @@
 #include "Engine.hpp"
 
 int main() {
-    std::cout << "Hi" << std::endl;
     Engine* engine = new Engine();
 
     try {
