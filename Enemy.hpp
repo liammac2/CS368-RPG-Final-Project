@@ -8,12 +8,21 @@
 #include "Character.hpp"
 #include "Skill.hpp"
 #include <vector>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 
 class Enemy : public Character{
 private:
+    sf::Sprite sprite;
+
 
 public:
+    Enemy(sf::Texture &texture);
+    void draw(sf::RenderWindow* rw);
+    void setHP(int health);
+    int getHP();
+    int getDef();
+    void reset();
 
 };
 

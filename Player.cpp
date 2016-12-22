@@ -11,6 +11,15 @@ Player::Player(sf::Texture &texture, int posY, int posX, int spd) {
     sprite.setPosition(positionX, positionY);
     sprite.setScale(.2, .2);
     speed = spd;
+    maxHP = 120;
+    currHP = maxHP;
+    maxMP = 30;
+    currMP = maxMP;
+    str = 30;
+    def = 10;
+    magic = 20;
+    Player::spd = 20;
+    luck = 15;
 }
 
 void Player::draw(sf::RenderWindow *rw) {
@@ -41,3 +50,28 @@ void Player::setPosition() {
 int Player::getSpeed() {
     return speed;
 }
+
+void Player::defend() {
+    def *= 2;
+}
+
+bool Player::flee() {
+    return true;
+}
+
+void Player::setHP(int health) {
+    currHP = health;
+}
+
+int Player::getHP() {
+    return currHP;
+}
+
+int Player::getDef() {
+    return def;
+}
+
+void Player::setDef(int defense) {
+    def = defense;
+}
+

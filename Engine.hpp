@@ -9,6 +9,7 @@
 #include "TextureManager.hpp"
 #include "Tile.hpp"
 #include "Player.hpp"
+#include "Enemy.hpp"
 
 class Engine {
 private:
@@ -21,10 +22,14 @@ private:
     void update();
     void loadTextures();
     std::vector<std::vector<Tile*>> tiles;
-    Player* player;
+    Player *player;
+    Enemy *enemy;
+    int selectedMenu = 0;
     int tilesize = 40;
     bool battleProcessing = false;
-    void processBattle(Player &player);
+    void processBattle();
+    std::vector<sf::Text> menu;
+    bool gameOver = false;
 
 
 public:

@@ -10,7 +10,6 @@
 #include <SFML/Graphics.hpp>
 
 
-
 class Player : public Character{
 private:
     int exp;
@@ -19,8 +18,9 @@ private:
     int positionY;
     int speed;
     std::vector<Item> inventory;
+    size_t tilesMoved = 0;
     sf::Sprite sprite;
-    size_t tilesMoved;
+
 
 public:
     Player(sf::Texture &texture, int posX, int posY, int speed);
@@ -28,12 +28,18 @@ public:
     void useitem(Item item);
     void addExp(size_t xp);
     void changeMoney(int gold);
+    void defend();
+    bool flee();
     void setPositionX(int x);
     void setPositionY(int y);
     void setTilesMoved(size_t moved);
     size_t getTilesMoved();
     void setPosition();
     int getSpeed();
+    void setHP(int health);
+    int getHP();
+    int getDef();
+    void setDef(int defense);
 };
 
 #endif //CS368FINALPROJECT_RPG_PLAYER_HPP
